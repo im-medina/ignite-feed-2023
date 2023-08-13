@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* max-wdith: 70 rem * 16 = 1120 
+- O box do feed tem 832pixels de largura, + o distanciamento de 32px da sidebar, e a sidebar tem 
+256px de largura. Somando tudo da 1120 pixels
+- Margin de 2rem e auto. faz com que fique centralizado na tela.
+- O padding faz com que se a tela fique menor que 70 rem, o conteúdo não vai ocupar a tela toda;
+-  grid-template-columns: 256px 1fr define a largura da sidebar e que o restante (feed) se adapte pro quanto couber na tela. O 1 fr é a unidade a ser usada no 'grid'.
+- gap: 2rem; o espaço entre a sidebar e o feed tem 32pixels;
+- align-items: flex-start faz com que a sidebar e o feed sempre fiquem alinhados para o topo. O padrão é tentar esticar os dois para o mesmo tamanho.
+*/

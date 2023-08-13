@@ -8,6 +8,15 @@
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* max-wdith: 70 rem * 16 = 1120 
 - O box do feed tem 832pixels de largura, + o distanciamento de 32px da sidebar, e a sidebar tem 
 256px de largura. Somando tudo da 1120 pixels

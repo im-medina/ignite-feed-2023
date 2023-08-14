@@ -15,8 +15,8 @@ const posts =[
       role:"Dev Front-end"
     },
     content:[
-      {type: 'pharagraph', content: 'Fala galeraa 👋'},
-      {type: 'pharagraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'paragraph', content: 'Saaalve!'},
+      {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifolio. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
       {type:'link', content:'jane.design/doctorcare' },     
     ],
     publishedAt: new Date('2023-08-20 16:04')
@@ -29,8 +29,8 @@ const posts =[
       role:"Educator"
     },
     content:[
-      {type: 'pharagraph', content: 'Fala galeraa 👋'},
-      {type: 'pharagraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'paragraph', content: 'Fala dev! 👋'},
+      {type: 'paragraph', content:'Atualização do conteúdo do Ignite!'},
       {type:'link', content:'jane.design/doctorcare' },      
     ],
     publishedAt: new Date('2023-08-10 16:04')

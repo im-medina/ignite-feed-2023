@@ -3,10 +3,27 @@ import ptBR from 'date-fns/locale/pt-BR'
 import Avatar from './Avatar'
 import Comment from './Comment'
 import styles from './Post.module.css'
-import { useState } from 'react'
+import { FormEvent, useState, ChangeEvent, InvalidEvent } from 'react'
 
+// 1
+interface Author{ 
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
 
-export function Post({ author, publishedAt, content }){
+interface Content{
+  type: 'paragraph' | 'link';
+  content: string;
+}
+
+interface PostProps{ //2. corresponde as propriedades do componente Post, logo abaixo
+  author: Author;
+  publishedAt: Date;
+  content: Content[];
+}
+
+export function Post({ author, publishedAt, content }: PostProps){ //3. a tipagem em objetos tem que ser global e não por propriedade
   const [comments, setComments] = useState(['Post bacana']) 
   const [newCommentText, setNewCommentText] = useState('')
 
@@ -21,26 +38,24 @@ export function Post({ author, publishedAt, content }){
     addSuffix:true,
   })
 
-  function handleCreateNewComment(){
+  function handleCreateNewComment(event: FormEvent){ //4.
     event.preventDefault()                            
-    const newCommentText = event.target.comment.value 
+  
     setComments([...comments,newCommentText])         
     setNewCommentText('')                             
   }
 
-  function handleNewCommentChange(){
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>){
     event.target.setCustomValidity('')
     setNewCommentText(event.target.value) 
   }
 
-  function handleNewCommentInvalid(){
+  function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>){
     event.target.setCustomValidity('Esse campo é obrigatório')
   }
 
-  function deleteComment(commentToDelete){
-  
+  function deleteComment(commentToDelete: string){  
     const commentsWithoutDeletedOne = comments.filter(comment=>{
-
       return comment !== commentToDelete;
     })
     setComments(commentsWithoutDeletedOne)

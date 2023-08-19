@@ -1,6 +1,6 @@
-Project being made with ReactJS for studies.
+# Study project made with ReactJS.
 
-## Update 08/17/2023
+# Update 08/17/2023
 
 Added Typescript
 
